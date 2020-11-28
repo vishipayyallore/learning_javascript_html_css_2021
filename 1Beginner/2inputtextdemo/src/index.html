@@ -15,37 +15,39 @@
 
 
     <!-- Custom styles for this File -->
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
 
     <header>
         <!-- Fixed navbar -->
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
-            <a class="navbar-brand" href="#">Application Title</a>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top top-nav-bar-overrides">
+            <a class="navbar-brand" href="#">Day 1</a>
         </nav>
     </header>
 
     <!-- Begin page content -->
-    <main role="main" class="container-fluid" style="background-color: aquamarine;">
-        <h1>Day Number</h1>
+    <main role="main" class="container mainContainer">
+        <h1>Guess Number</h1>
+        
+        <div>
+            <label for="guessField">Enter a guess: </label><input type="text" id="guessField" class="guessField">
+            <input type="button" value="Submit guess" class="guessSubmit bg-warning" onclick="getValue()">
+        </div>
 
-        <div class="container-fluid" style="background-color: bisque;">
-            <div class="card border-primary mb-3" style="max-width: 18rem;">
-                <div class="card-header">Main Content</div>
-                <div class="card-body text-primary">
-                  <h5 class="card-title">Primary card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
+        <div>
+            <p id="originalValue">
+            </p>
+            <p id="userAnswer">
+            </p>
         </div>
 
     </main>
 
     <footer class="footer">
         <div class="container">
-            <span>Footer Text</span>
+            <span>Day 1</span>
         </div>
     </footer>
 
@@ -59,6 +61,13 @@
     <!-- Custom scripts for this File -->
     <script src="scripts/index.js"></script>
 
+    <script>
+        // To understand Input/Output
+        let name = prompt('Enter your name: '); // Input
+        alert('Dialog 1 :: Name: ' + name + ' I stay in hyderabad.'); // Output
+        alert(`Dialog 2 :: Name: ${name} I stay in hyderabad.
+                This is New Line!!!`); // Output
+    </script>
 </body>
 
 </html>
