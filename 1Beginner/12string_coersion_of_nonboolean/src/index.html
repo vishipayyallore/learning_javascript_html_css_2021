@@ -8,46 +8,50 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Day 1</title>
+    <title>String() Coersion Of Nonboolean</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-
     <!-- Custom styles for this File -->
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
 
     <header>
         <!-- Fixed navbar -->
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
-            <a class="navbar-brand" href="#">Application Title</a>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top top-nav-bar-overrides">
+            <a class="navbar-brand" href="#">String() Coersion Of Nonboolean</a>
         </nav>
     </header>
 
     <!-- Begin page content -->
-    <main role="main" class="container-fluid py-2" style="background-color: aquamarine;">
-        <h1>Day Number</h1>
-
-        <div class="container-fluid py-2 shadow" style="background-color: bisque;">
-            <div class="card border-primary mb-3 shadow" style="max-width: 18rem;">
-                <div class="card-header">Main Content</div>
-                <div class="card-body text-primary">
-                    <h5 class="card-title">Primary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                </div>
+    <main role="main" class="container mainContainer">
+        
+        <div class="container shadow py-2 col-sm-4" style="background-color: aliceblue;">
+            <div>
+                <label for="txtAge">Bill Amount: </label>
+                <input type="number" placeholder="Bill Amount" id="txtBillAmount" name="txtBillAmount" />
             </div>
+
+            <div>
+                <label for="txtAge">Tax Rate: </label>
+                <input type="number" placeholder="Tax Rate" id="txtTaxRate" name="txtTaxRate" />
+            </div>
+            
+            <p id="lblTotalBillAmount"></p>
+
+            <input type="button" class="btn btn-primary" value="Total Bill" onclick="getCalculateBillAmount()" />
         </div>
+        <hr />
 
     </main>
 
     <footer class="footer">
         <div class="container">
-            <span>Footer Text</span>
+            <span>&copy; 2020 | String() Coersion Of Nonboolean</span>
         </div>
     </footer>
 

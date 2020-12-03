@@ -8,46 +8,45 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Day 1</title>
+    <title>P Tag Demo</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-
     <!-- Custom styles for this File -->
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
 
     <header>
         <!-- Fixed navbar -->
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
-            <a class="navbar-brand" href="#">Application Title</a>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top top-nav-bar-overrides">
+            <a class="navbar-brand" href="#">P Tag Demo</a>
         </nav>
     </header>
 
     <!-- Begin page content -->
-    <main role="main" class="container-fluid py-2" style="background-color: aquamarine;">
-        <h1>Day Number</h1>
+    <div class="container shadow" style="background-color: rgb(171, 233, 112);">
+        This is first sentence.
+        This is second sentence.
+    </div>
+    <hr>
 
-        <div class="container-fluid py-2 shadow" style="background-color: bisque;">
-            <div class="card border-primary mb-3 shadow" style="max-width: 18rem;">
-                <div class="card-header">Main Content</div>
-                <div class="card-body text-primary">
-                    <h5 class="card-title">Primary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                </div>
-            </div>
-        </div>
-
-    </main>
-
+    <div class="container shadow" style="background-color:aliceblue; padding-bottom: 1em;">
+        <p>This is first sentence. Tag Level Styling.</p>
+        <p style="background-color: rgb(171, 233, 112); color: brown; padding-left: 1em;">This is second sentence. Inline Styling.</p>
+        <p class="format-p-tag">This is third sentence.</p>
+        <p id="forth-p-tag" >This is fourth sentence.</p>
+        <p>No extra styling. Tag Level Styling.</p>
+        <input type="button" class="btn btn-primary shadow" value="For .. In" onclick="showForInLoop()"/>
+    </div>
+    <hr>
+    
     <footer class="footer">
         <div class="container">
-            <span>Footer Text</span>
+            <span>&copy; 2020 | P Tag Demo</span>
         </div>
     </footer>
 
