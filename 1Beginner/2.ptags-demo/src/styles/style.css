@@ -1,6 +1,6 @@
 html {
 	position: relative;
-	min-height: 100vh;
+	min-height: 100%;
 }
 
 body {
@@ -12,45 +12,25 @@ body {
 	background-color: #3f51b5 !important;
 }
 
-span {
-	color: blue;
-}
-
-.span-styles {
-	font-family: Georgia, "Times New Roman", Times, serif;
-	color: rgb(9, 53, 250);
-}
-
-/* Header styles
--------------------------------------------------- */
 h1 {
 	color: rgb(9, 53, 250);
 }
 
-#header-styles {
-	color: rgb(121, 51, 5);
-}
-
-/* Div styles
--------------------------------------------------- */
-.div-styles {
-	background-color: rgba(189, 243, 158, 0.596);
-	border: none;
-	border-radius: 10px;
-	padding: 15px;
-	box-shadow: 5px 5px #8a898954;
-	margin-bottom: 10px;
-}
-
-/* Paragraph styles
--------------------------------------------------- */
 p {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	color: rgb(107, 36, 3);
+	color: rgb(11, 130, 241);
 }
 
-.para-styles {
+.para1-styles {
 	background-color: rgb(119, 187, 247);
+	box-shadow: 3px 3px rgb(73, 74, 77, 0.2);
+	border: none;
+	border-radius: 10px;
+	padding: 0px 5px 20px 20px;
+}
+
+.para2-styles {
+	background-color: rgb(143, 245, 206);
 	box-shadow: 3px 3px rgb(73, 74, 77, 0.2);
 	border: none;
 	border-radius: 10px;

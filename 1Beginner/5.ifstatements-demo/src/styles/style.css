@@ -12,6 +12,10 @@ body {
 	background-color: #3f51b5 !important;
 }
 
+#lblErrorMessage {
+	color: red;
+}
+
 span {
 	color: blue;
 }
@@ -40,6 +44,7 @@ h1 {
 	padding: 15px;
 	box-shadow: 5px 5px #8a898954;
 	margin-bottom: 10px;
+	width: 35%;
 }
 
 /* Paragraph styles
@@ -59,7 +64,6 @@ p {
 
 /* Buttons styles
 -------------------------------------------------- */
-
 button {
 	cursor: pointer;
 	font-size: 1.2rem;

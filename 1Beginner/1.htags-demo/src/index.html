@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Title Goes Here</title>
+    <title>H Tags Demo</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -23,20 +23,33 @@
     <header>
         <!-- Fixed navbar -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top top-nav-bar-overrides">
-            <a class="navbar-brand" href="#">Title Goes Here</a>
+            <a class="navbar-brand" href="#">H Tags Demo</a>
         </nav>
     </header>
 
     <!-- Begin page content -->
     <main role="main" class="container mainContainer">
-        <h1>Title Goes Here</h1>
+        <h1>H Tags Demo</h1>
+        <p>1. H1 ... H6 Tags. <br>2. Classes, <br>3. Strings and Number Variables</p>
 
-        <p>Main Content</p>
+        <div class="div-styles">
+            <h1>Header 1</h1>
+            <h1>Header 1 - v1</h1>
+            <h1 id="header-three-id">Header 1 - V2</h1>
+            <h2 class="header-two-styles">Header 2</h2>
+            <h2 class="header-two-styles">Header 2 - v1</h2>
+            <h2 class="header-two-styles">Header 2 - v2</h2>
+            <h3  class="header-two-styles" id="header-three-id">Header 3</h3>
+            <h4 style="color: orange;">Header 4</h4>
+            <h5>Header 5</h5>
+            <h6>Header 6</h6>
+        </div>
+
     </main>
 
     <footer class="footer">
         <div class="container">
-            <label>&copy; <span id="spanYear"></span> | Title Goes Here</label>
+            <span>&copy; 2020 | H Tags Demo</span>
         </div>
     </footer>
 
@@ -55,10 +68,6 @@
 
     <!-- Custom scripts for this File -->
     <script src="scripts/index.js"></script>
-    <script>
-        document.getElementById('spanYear').innerText = (new Date().getFullYear());
-    </script>
-
 </body>
 
 </html>

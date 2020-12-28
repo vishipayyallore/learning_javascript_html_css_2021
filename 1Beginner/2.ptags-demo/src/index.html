@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Title Goes Here</title>
+    <title>Para Tags Demo</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -23,20 +23,29 @@
     <header>
         <!-- Fixed navbar -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top top-nav-bar-overrides">
-            <a class="navbar-brand" href="#">Title Goes Here</a>
+            <a class="navbar-brand" href="#">Para Tags Demo</a>
         </nav>
     </header>
 
     <!-- Begin page content -->
     <main role="main" class="container mainContainer">
-        <h1>Title Goes Here</h1>
+        <h1>Para Tags Demo</h1>
 
-        <p>Main Content</p>
+        <p class="para1-styles" id="para1">
+            Content
+        </p>
+
+        <p class="para2-styles" id="para2">
+            Content
+        </p>
+
+        <button onclick="showParaDemo()">Show Para Demo</button>
+
     </main>
 
     <footer class="footer">
         <div class="container">
-            <label>&copy; <span id="spanYear"></span> | Title Goes Here</label>
+            <span>&copy; 2020 | Para Tags Demo</span>
         </div>
     </footer>
 
@@ -55,9 +64,6 @@
 
     <!-- Custom scripts for this File -->
     <script src="scripts/index.js"></script>
-    <script>
-        document.getElementById('spanYear').innerText = (new Date().getFullYear());
-    </script>
 
 </body>
 

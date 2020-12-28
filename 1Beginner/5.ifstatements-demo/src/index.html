@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Title Goes Here</title>
+    <title>Hotel Billing</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -23,20 +23,52 @@
     <header>
         <!-- Fixed navbar -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top top-nav-bar-overrides">
-            <a class="navbar-brand" href="#">Title Goes Here</a>
+            <a class="navbar-brand" href="#">Hotel Billing</a>
         </nav>
     </header>
 
     <!-- Begin page content -->
     <main role="main" class="container mainContainer">
-        <h1>Title Goes Here</h1>
+        <h1>Bill Calculation</h1>
 
-        <p>Main Content</p>
+        <div class="div-styles">
+
+            <div>
+                <label for="currency">Choose a currency:</label>
+                <select name="currency" id="currency">
+                    <!-- <option value="NoCurrency" default selected disabled>---</option> -->
+                    <option value="NoCurrency">---</option>
+                    <option value="₹">Rupees</option>
+                    <option value="£">Pounds</option>
+                    <option value="$">Dollars</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="txtBillAmount">Bill Amount: </label>
+                <input type="number" placeholder="Bill Amount" id="txtBillAmount" name="txtBillAmount" />
+            </div>
+
+
+            <div>
+                <label for="txtTaxRate">Tax Rate: </label>
+                <input type="number" placeholder="Tax Rate" id="txtTaxRate" name="txtTaxRate" />
+            </div>
+
+            <p id="lblTotalBillAmount">Total Bill: 0.00</p>
+
+            <button class="btn btn-primary shadow" onclick="getCalculateBillAmount()">Total Bill</button>
+
+            <div>
+                <label id="lblErrorMessage" style="visibility: hidden;">Please select a currency.</label>
+            </div>
+        </div>
+
     </main>
 
     <footer class="footer">
         <div class="container">
-            <label>&copy; <span id="spanYear"></span> | Title Goes Here</label>
+            <span>&copy; 2020 | Hotel Billing</span>
         </div>
     </footer>
 
@@ -55,9 +87,6 @@
 
     <!-- Custom scripts for this File -->
     <script src="scripts/index.js"></script>
-    <script>
-        document.getElementById('spanYear').innerText = (new Date().getFullYear());
-    </script>
 
 </body>
 

@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Title Goes Here</title>
+    <title>Span Tag Demo</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -23,20 +23,35 @@
     <header>
         <!-- Fixed navbar -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top top-nav-bar-overrides">
-            <a class="navbar-brand" href="#">Title Goes Here</a>
+            <a class="navbar-brand" href="#">Span Tag Demo</a>
         </nav>
     </header>
 
     <!-- Begin page content -->
     <main role="main" class="container mainContainer">
-        <h1>Title Goes Here</h1>
+        <h1>Span Tag Demo</h1>
 
         <p>Main Content</p>
+
+        <div class="div-styles">
+            Div 1
+        </div>
+
+        <div class="div-styles">
+            Div 2
+        </div>
+
+        <div class="div-styles">
+            <p>
+                This is the first line. This is <span>Span 1's</span> Content. 
+                This is <span class="span-styles">Span 2's</span> Content.
+            </p>
+        </div>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <label>&copy; <span id="spanYear"></span> | Title Goes Here</label>
+            <span>&copy; 2020 | Span Tag Demo</span>
         </div>
     </footer>
 
@@ -55,9 +70,6 @@
 
     <!-- Custom scripts for this File -->
     <script src="scripts/index.js"></script>
-    <script>
-        document.getElementById('spanYear').innerText = (new Date().getFullYear());
-    </script>
 
 </body>
 
