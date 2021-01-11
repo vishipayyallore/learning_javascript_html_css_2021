@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Title Goes Here</title>
+    <title>Functions Demo</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -23,20 +23,45 @@
     <header>
         <!-- Fixed navbar -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top top-nav-bar-overrides">
-            <a class="navbar-brand" href="#">Title Goes Here</a>
+            <a class="navbar-brand" href="#">Functions Demo</a>
         </nav>
     </header>
 
     <!-- Begin page content -->
     <main role="main" class="container mainContainer">
-        <h1>Title Goes Here</h1>
+        <h1>Functions Demo</h1>
 
-        <p>Main Content</p>
+        <div class="div-styles">
+
+            <div id="function1" class="div-styles-v1 shadow">
+                <input type="text" id="txtUserName">
+                <input type="button" class="btn btn-primary shadow" value="Say Hello" onclick="sayHello()">
+            </div>
+
+            <div id="function2" class="div-styles-v1 shadow">
+                <label for="txtBillAmount">Bill Amount: </label>
+                <input type="number" placeholder="Bill Amount" id="txtBillAmount" name="txtBillAmount" />
+                <p id="lblTotalBillAmount">Total Bill: 0.00</p>
+                <input type="button" class="btn btn-info shadow" value="Calculate Total Bill" onclick="calcualteTotalBill()">
+            </div> 
+
+            <div id="function3" class="div-styles-v1 shadow">
+                <p id="lblToday"></p>
+                <input type="button" class="btn btn-warning shadow" value="Today" onclick="getToday()">
+            </div>
+
+            <div id="function4" class="div-styles-v1 shadow">
+                <input type="text" id="txtUserNamev2">
+                <input type="button" class="btn btn-danger shadow" value="Say Hello" onclick="sayHelloV2()">
+            </div>
+
+        </div>
+
     </main>
 
     <footer class="footer">
         <div class="container">
-            <label>&copy; 2020 - <span id="spanYear"></span> | Title Goes Here</label>
+            <label>&copy; 2020 - <span id="spanYear"></span> | Functions Demo</label>
         </div>
     </footer>
 

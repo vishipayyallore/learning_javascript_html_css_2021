@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Title Goes Here</title>
+    <title>ForEach Demo</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -23,20 +23,49 @@
     <header>
         <!-- Fixed navbar -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top top-nav-bar-overrides">
-            <a class="navbar-brand" href="#">Title Goes Here</a>
+            <a class="navbar-brand" href="#">ForEach Demo</a>
         </nav>
     </header>
 
     <!-- Begin page content -->
     <main role="main" class="container mainContainer">
-        <h1>Title Goes Here</h1>
+        <h1>ForEach Demo</h1>
 
-        <p>Main Content</p>
+        <div class="container">
+            <label>For loop and Array.forEach</label><br>
+            <input type="Text" placeholder="Your Name" name="txtFriends" value="Friend 1" />
+            <input type="Text" placeholder="Your Name" name="txtFriends" value="Friend 2" />
+            <input type="Text" placeholder="Your Name" name="txtFriends" value="Friend 3" />
+            <input type="Text" placeholder="Your Name" name="txtFriends" value="Friend 4" />
+            <input type="Text" placeholder="Your Name" name="txtFriends" value="Friend 5" />
+            <div>
+                <input type="button" class="btn btn-warning shadow mt-2" value="ForLoop Friends"
+                    onclick="forLoopFriends()">
+                    <input type="button" class="btn btn-primary shadow mt-2" value="ForEach V1" onclick="forEachV1()">
+                    <input type="button" class="btn btn-info shadow mt-2" value="ForEach V2" onclick="forEachV2()">
+                    <input type="button" class="btn btn-danger shadow mt-2" value="ForEach V3" onclick="forEachV3()">
+                </div>
+        </div>
+
+        <div class="container row">
+
+            <div class="mt-2 shadow p-2 m-2" style="background-color: aquamarine;">
+                <p id="forEachV1"></p>
+            </div>
+            <div class="mt-2 shadow p-2 m-2" style="background-color: rgb(227, 247, 142);">
+                <p id="forEachV2"></p>
+            </div>
+            <div class="mt-2 shadow p-2 m-2" style="background-color: rgb(247, 202, 142);">
+                <p id="forEachV3"></p>
+            </div>
+
+        </div>
+
     </main>
 
     <footer class="footer">
         <div class="container">
-            <label>&copy; 2020 - <span id="spanYear"></span> | Title Goes Here</label>
+            <label>&copy; 2020 - <span id="spanYear"></span> | ForEach Demo</label>
         </div>
     </footer>
 
