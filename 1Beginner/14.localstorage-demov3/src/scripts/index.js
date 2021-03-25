@@ -2,11 +2,16 @@
 
 // Global Variables.
 const localStorageBookKey = 'books';
-let books = getBooksFromStorage();
 
-books?.forEach(function (book) {
-    addBookToTable(book);
-});
+displayBooks();
+
+function displayBooks() {
+    getElementById('booksList').innerText = '';
+
+    getBooksFromStorage()?.forEach(function (book) {
+        addBookToTable(book);
+    });
+}
 
 function getLocalStorageItem(itemName) {
     return JSON.parse(localStorage.getItem(itemName));
@@ -29,7 +34,7 @@ class Book {
 }
 
 function addBookToTable(book) {
-    const list = getElementById('booksList');
+    const table = getElementById('booksList');
 
     const row = document.createElement('tr');
 
@@ -37,11 +42,11 @@ function addBookToTable(book) {
     row.innerHTML = `
       <td>${book.title}</td>
       <td>${book.author}</td>
-      <td> <a href="#"> <i class="fa fa-pencil fa-fw" aria-hidden="true" style="color:blue;"></i> </a> </td>
+      <td> <a href="#" class="button-edit"> <i class="fa fa-pencil fa-fw" aria-hidden="true" style="color:blue;"></i> </a> </td>
       <td> <a href="#" class="button-delete"> <i class="fa fa-trash-o fa-lg"  aria-hidden="true" style="color:red;"></i> </a> </td>
     `;
 
-    list.appendChild(row);
+    table.appendChild(row);
 }
 
 getElementById("buttonAddBook").addEventListener("click", function (event) {
@@ -54,30 +59,35 @@ getElementById("buttonAddBook").addEventListener("click", function (event) {
 
     addBookToTable(book);
 
-    books.push(book);
-
-    setLocalStorageItem(localStorageBookKey, books);
+    addBookToLocalStorage(book);
 });
 
-getElementById('buttonClear').addEventListener("click", function (event) {
+getElementById("buttonClear").addEventListener("click", function (event) {
     event.preventDefault();
 
     getElementById('title').value = '';
     getElementById('author').value = '';
+
+    getElementById('title').focus();
 });
 
 getElementById("buttonUpdate").addEventListener("click", function (event) {
     event.preventDefault();
 
-    let title = getElementById('title').value,
+    const title = getElementById('title').value,
         author = getElementById('author').value;
 
-    let currentElement = e.target;
-    title.value = currentElement.parentElement.parentElement.parentElement.cells[0].innerText;
-    author.value = currentElement.parentElement.parentElement.parentElement.cells[1].innerText;
+    const booksList = getBooksFromStorage();
 
-    console.log(`${e} ${currentElement}`);
-    console.log(`${currentElement.parentElement.parentElement.parentElement.cells[0].innerText}`);
+    booksList.forEach(function (book, index) {
+        if (book.title === title) {
+            booksList[index] = new Book(title, author);
+        }
+    });
+
+    setLocalStorageItem(localStorageBookKey, booksList);
+
+    displayBooks();
 });
 
 getElementById('booksList').addEventListener('click', function (e) {
@@ -85,14 +95,16 @@ getElementById('booksList').addEventListener('click', function (e) {
 
     let currentElement = e.target;
     const bookTitle = currentElement.parentElement.parentElement.parentElement.cells[0].innerText;
-
-    console.log(`${e} ${currentElement}`);
-    console.log(`${currentElement.parentElement.parentElement.parentElement.cells[0].innerText}`);
+    const bookAuthor = currentElement.parentElement.parentElement.parentElement.cells[1].innerText;
 
     if (currentElement.parentElement.className === 'button-delete') {
         currentElement.parentElement.parentElement.parentElement.remove();
 
         removeBookFromLocalStorage(bookTitle);
+    }
+    else if (currentElement.parentElement.className === 'button-edit') {
+        getElementById('title').value = bookTitle;
+        getElementById('author').value = bookAuthor;
     }
 
 });
@@ -102,9 +114,19 @@ function removeBookFromLocalStorage(bookTitle) {
 
     booksList.forEach(function (book, index) {
         if (book.title === bookTitle) {
-            books.splice(index, 1);
+            booksList.splice(index, 1);
+
+
         }
     });
+
+    setLocalStorageItem(localStorageBookKey, booksList);
+}
+
+function addBookToLocalStorage(book) {
+    const booksList = getBooksFromStorage();
+
+    booksList.push(book);
 
     setLocalStorageItem(localStorageBookKey, booksList);
 }
