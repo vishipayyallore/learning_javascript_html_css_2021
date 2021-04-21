@@ -18,6 +18,10 @@ body {
 	border-color: #e74c3c;
   }
 
+  small {
+	color: #e74c3c;
+  }
+
 .top-nav-bar-overrides {
 	background-color: #3f51b5 !important;
 }

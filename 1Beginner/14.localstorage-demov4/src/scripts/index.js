@@ -49,28 +49,70 @@ function addBookToTable(book) {
     table.appendChild(row);
 }
 
+function setMessage(formControl, message){
+    const small = formControl.querySelector('small');
+    small.innerText = message;
+}
+
+function showError(input, message) {
+    const formControl = input.parentElement;
+    // formControl.className = 'form-control error';
+    // const small = formControl.querySelector('small');
+    // small.innerText = message;
+    setMessage(formControl, message);
+}
+
+// Show success outline
+function showSuccess(input) {
+    const formControl = input.parentElement;
+    setMessage(formControl, '');
+    // formControl.className = 'form-control success';
+}
+
+// Get fieldname
+function getFieldName(input) {
+    return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+}
+
+function validateRequiredFields(requiredFields) {
+    let valid = true;
+
+    requiredFields.forEach(function (field) {
+        if (field.value.trim() === '') {
+            showError(field, `${getFieldName(field)} is required`);
+            valid = false;
+        } else {
+            showSuccess(field);
+        }
+    });
+
+    return valid;
+}
+
 getElementById("buttonAddBook").addEventListener("click", function (event) {
     event.preventDefault();
 
-    const title = getElementById('title').value.trim(),
-        author = getElementById('author').value.trim();
+    const titleField = getElementById('title'),
+        authorField = getElementById('author');
 
-    // Error handling
-    // if (title === '') {
-    //     getElementById('title').className = 'form-control.error';
-    //     return;
-    // }
+    // TODO: Validate the fileds
+    const isFormValid = validateRequiredFields([titleField, authorField]);
+    console.log(`Form Valid: ${isFormValid}`);
 
-    if(verifyItemExistsInLocalStorage(title)){
-        getElementById('errorForTitle').innerText = 'Book with same title already exists';
-        // alert('Book with same title already exists');
-        getElementById('title').focus();
+    if(!isFormValid){
+        return;
+    }
+
+    if (verifyItemExistsInLocalStorage(titleField.value.trim())) {
+        // getElementById('errorForTitle').innerText = 'Book with same title already exists';
+
+        titleField.focus();
     } else {
-        const book = new Book(title, author);
+        const book = new Book(titleField.value, authorField.value);
 
         addBookToTable(book);
-    
-        addBookToLocalStorage(book);    
+
+        addBookToLocalStorage(book);
     }
 });
 
@@ -79,8 +121,6 @@ getElementById("buttonClear").addEventListener("click", function (event) {
 
     getElementById('title').value = '';
     getElementById('author').value = '';
-
-    getElementById('title').className = 'form-control';
 
     getElementById('title').focus();
 });
